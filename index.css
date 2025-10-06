@@ -312,6 +312,7 @@ i[class*="van-type-"] {
 
 .van-detail-container {
    padding-inline: 27px;
+   max-width: 100vw;
 }
 
 .van-detail-container .back-button {
