@@ -213,6 +213,10 @@ footer {
    padding-inline: 23px;
 }
 
+.van-list-container > h1 {
+   font-size: 1.7em;
+}
+
 .van-list-filter-buttons {
    display: flex;
    flex-wrap: wrap;
