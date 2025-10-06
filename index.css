@@ -22,12 +22,15 @@ body::-webkit-scrollbar {
 body {
    -ms-overflow-style: none;
    scrollbar-width: none;
+   display: flex;
+   justify-content: center;
 }
 
 .site-wrapper {
    min-height: 100vh;
    display: flex;
    flex-direction: column;
+   max-width: 600px;
 }
 
 header {
@@ -119,6 +122,8 @@ footer {
    border: none;
    font-weight: bold;
    background: none;
+   cursor: pointer;
+   color: inherit;
 }
 
 /*** HOME PAGE ***/
