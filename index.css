@@ -232,7 +232,7 @@ footer {
    grid-template-columns: 1fr 1fr;
    justify-items: center;
    gap: 34px;
-   margin-top: 57px;
+   margin-top: 37px;
 }
 
 .van-tile a {
@@ -304,6 +304,10 @@ footer {
 
 i[class*="van-type-"] {
    padding: 7px 14px;
+}
+
+.van-info > h3 {
+   margin-bottom: -10px;
 }
 
 .van-detail-container {
