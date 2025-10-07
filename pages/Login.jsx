@@ -1,6 +1,10 @@
 import React from "react"
-import { useLocation, useNavigate } from "react-router-dom"
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom"
 import { loginUser } from "../api"
+
+export function loader({ request }) {
+   return new URL(request.url).searchParams.get("message")
+}
 
 export default function Login() {
    const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
@@ -10,7 +14,9 @@ export default function Login() {
    const location = useLocation()
    const navigate = useNavigate()
 
-   const from = location.state?.from || "/host";
+   const from = location.state?.from || "/host"
+   
+   const message = useLoaderData()
 
    function handleSubmit(e) {
       e.preventDefault()
@@ -41,12 +47,13 @@ export default function Login() {
       <div className="login-container">
          {
             location.state?.message &&
-               <h3 className="login-error">{location.state.message}</h3>
+            <h3 className="login-error">{location.state.message}</h3>
          }
+         {message && <h3 className="red">{message}</h3>}
          <h1>Sign in to your account</h1>
          {
             error?.message &&
-               <h3 className="login-error">{error.message}</h3>
+            <h3 className="login-error">{error.message}</h3>
          }
 
          <form onSubmit={handleSubmit} className="login-form">

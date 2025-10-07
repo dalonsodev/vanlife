@@ -569,6 +569,10 @@ i[class*="van-type-"] {
    color: red;
 }
 
+.red {
+    color: #cc0000;
+}
+
 .host-dashboard-earnings {
    background-color: #ffead0;
    padding: 37px 26px;
@@ -763,6 +767,7 @@ img.graph {
    color: #ff8c38;
    margin-right: 5px;
 }
+
 
 @media (max-width: 500px) {
    header {

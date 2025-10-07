@@ -1,36 +1,14 @@
 import React from "react"
-import { Link, useParams, useLocation } from "react-router-dom"
+import { Link, useLocation, useLoaderData } from "react-router-dom"
 import { getVan } from "../../api"
 
-export default function VanDetail() {
-   const [van, setVan] = React.useState(null)
-   const [loading, setLoading] = React.useState(false)
-   const [error, setError] = React.useState(null)
-   const { id } = useParams()
-   const location = useLocation()
+export function loader({ params }) {
+   return getVan(params.id)
+}
 
-   React.useEffect(() => {
-      async function loadVans() {
-         setLoading(true)
-         try {
-            const data = await getVan(id)
-            setVan(data)
-         } catch (err) {
-            setError(err)
-         } finally {
-            setLoading(false)
-         }
-      }
-      loadVans()
-   }, [id])
-   
-   if (loading) {
-      return <h1>Loading...</h1>
-   }
-   
-   if (error) {
-      return <h1>There was an error: {error.message}</h1>
-   }
+export default function VanDetail() {
+   const location = useLocation()
+   const van = useLoaderData()
 
    const search = location.state?.search || "";
    const type = location.state?.type || "all";
