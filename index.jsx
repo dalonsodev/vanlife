@@ -10,7 +10,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans, { loader as vansLoader } from "./pages/Vans/Vans"
 import VanDetail, { loader as vanDetailLoader } from "./pages/Vans/VanDetail"
-import Login, { loader as loginLoader } from "./pages/Login"
+import Login, { loader as loginLoader, action as loginAction } from "./pages/Login"
 import Dashboard from "./pages/Host/Dashboard"
 import Income from "./pages/Host/Income"
 import Reviews from "./pages/Host/Reviews"
@@ -35,6 +35,7 @@ const router = createBrowserRouter(createRoutesFromElements(
          path="login"
          element={<Login />}
          loader={loginLoader}
+         action={loginAction}
       />
       <Route 
          path="vans" 
