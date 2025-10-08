@@ -23,7 +23,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
-// Refactoring the fetching functions below
 const vansCollectionRef = collection(db, "vans")
 
 export async function getVans() {
@@ -56,8 +55,6 @@ export async function getHostVans() {
 
    return vans
 }
-
-
 
 export async function loginUser(creds) {
    const res = await fetch("/api/login",

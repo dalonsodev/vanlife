@@ -36,16 +36,9 @@ export default function Login() {
 
    return (
       <div className="login-container">
-         {
-            message && 
-            <h3 className="red">{message}</h3>
-         }
+         {message && <h3 className="red">{message}</h3>}
          <h1>Sign in to your account</h1>
-         {
-            errorMessage &&
-            <h3 className="red">{errorMessage}</h3>
-         }
-
+         {errorMessage && <h3 className="red">{errorMessage}</h3>}
          <Form 
             method="POST" 
             className="login-form"

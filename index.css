@@ -342,6 +342,9 @@ i[class*="van-type-"] {
 
 .van-detail > i {
    align-self: flex-start;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .van-detail p:not(.van-price) {
@@ -705,6 +708,7 @@ img.graph {
    font-weight: 500;
    font-size: 20px;
    color: #4d4d4d;
+   margin: 0;
 }
 
 .host-reviews {

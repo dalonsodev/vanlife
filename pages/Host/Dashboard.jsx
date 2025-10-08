@@ -7,6 +7,7 @@ export default function Dashboard() {
    const [vans, setVans] = React.useState([])
    const [loading, setLoading] = React.useState(false)
    const [error, setError] = React.useState(null)
+   
    React.useEffect(() => {
       setLoading(true)
       getHostVans()
