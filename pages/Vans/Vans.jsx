@@ -14,7 +14,6 @@ export function loader() {
 
 export default function Vans() {
    const [searchParams, setSearchParams] = useSearchParams()
-   const [error, setError] = React.useState(null)
    const dataPromise = useLoaderData()
 
    const typeFilter = searchParams.get("type")
@@ -28,10 +27,6 @@ export default function Vans() {
          }
          return prevParams
       })
-   }
-
-   if (error) {
-      return <h1>There was an error: {error.message}</h1>
    }
 
    function renderVanElements(vans) {
